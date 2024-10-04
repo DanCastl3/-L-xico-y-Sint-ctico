@@ -44,7 +44,7 @@
                         <td>{{ token[1] }}</td>
                         <td>{{ token[0] == "RESERVADO" and 'X' or '' }}</td>
                         <td>{{ token[0] == "IDENTIFICADOR" and 'X' or '' }}</td>
-                        <td>{{ token[0] == "PARENTESIS IZQUIERDO" or token[0] == "PARENTESIS DERECHO" and 'X' or '' }}</td>
+                        <td>{{ token[0] == "PARENTESIS" and 'X' or '' }}</td>
                         <td>{{ token[0] == "DELIMITADOR" and 'X' or '' }}</td>
                         <td>{{ token[0] == "OPERADOR" and 'X' or '' }}</td>
                         <td>{{ token[0] == "SIMBOLO" and 'X' or '' }}</td>
@@ -57,9 +57,9 @@
                         <th>Total</th>
                         <th>{{ contador.get('RESERVADO', 0) }}</th>
                         <th>{{ contador.get('IDENTIFICADOR', 0) }}</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>{{ contador.get('PARENTESIS', 0) }}</th>
+                        <th>{{ contador.get('DELIMITADOR', 0) }}</th> 
+                        <th>{{ contador.get('OPERADOR', 0) }}</th>    
                         <th>{{ contador.get('SIMBOLO', 0) }}</th>
                         <th></th>
                     </tr>
@@ -68,10 +68,9 @@
         </div>
     </div>
 
-    <!-- Script para limpiar el contenido del textarea -->
     <script>
         document.getElementById('limpiar-btn').addEventListener('click', function() {
-            document.getElementById('Expresion').value = ''; // Limpiar el contenido del textarea
+            document.getElementById('Expresion').value = ''; 
         });
     </script>
 </body>
