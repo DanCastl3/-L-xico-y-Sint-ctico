@@ -1,0 +1,331 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    NUMERO
+    SIMBOLO
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+Rule 2     declaraciones -> INT ID COMA ID COMA ID PUNTO_COMA
+Rule 3     instrucciones -> lectura lectura asignacion impresion fin
+Rule 4     lectura -> READ ID PUNTO_COMA
+Rule 5     asignacion -> ID OPERADOR ID OPERADOR ID PUNTO_COMA
+Rule 6     impresion -> PRINTF PABIERTO CADENA PCERRADO PUNTO_COMA
+Rule 7     fin -> END PUNTO_COMA
+
+Terminals, with rules where they appear
+
+CADENA               : 6
+COMA                 : 2 2
+END                  : 7
+ID                   : 1 2 2 2 4 5 5 5
+INT                  : 2
+LLAVE_ABIERTA        : 1
+LLAVE_CERRADA        : 1
+NUMERO               : 
+OPERADOR             : 5 5
+PABIERTO             : 1 6
+PCERRADO             : 1 6
+PRINTF               : 6
+PROGRAMA             : 1
+PUNTO_COMA           : 2 4 5 6 7
+READ                 : 4
+SIMBOLO              : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+asignacion           : 3
+declaraciones        : 1
+fin                  : 3
+impresion            : 3
+instrucciones        : 1
+lectura              : 3 3
+programa             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+
+    PROGRAMA        shift and go to state 2
+
+    programa                       shift and go to state 1
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> PROGRAMA . ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+
+    ID              shift and go to state 3
+
+
+state 3
+
+    (1) programa -> PROGRAMA ID . PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+
+    PABIERTO        shift and go to state 4
+
+
+state 4
+
+    (1) programa -> PROGRAMA ID PABIERTO . PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+
+    PCERRADO        shift and go to state 5
+
+
+state 5
+
+    (1) programa -> PROGRAMA ID PABIERTO PCERRADO . LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA
+
+    LLAVE_ABIERTA   shift and go to state 6
+
+
+state 6
+
+    (1) programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA . declaraciones instrucciones LLAVE_CERRADA
+    (2) declaraciones -> . INT ID COMA ID COMA ID PUNTO_COMA
+
+    INT             shift and go to state 8
+
+    declaraciones                  shift and go to state 7
+
+state 7
+
+    (1) programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones . instrucciones LLAVE_CERRADA
+    (3) instrucciones -> . lectura lectura asignacion impresion fin
+    (4) lectura -> . READ ID PUNTO_COMA
+
+    READ            shift and go to state 11
+
+    instrucciones                  shift and go to state 9
+    lectura                        shift and go to state 10
+
+state 8
+
+    (2) declaraciones -> INT . ID COMA ID COMA ID PUNTO_COMA
+
+    ID              shift and go to state 12
+
+
+state 9
+
+    (1) programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones . LLAVE_CERRADA
+
+    LLAVE_CERRADA   shift and go to state 13
+
+
+state 10
+
+    (3) instrucciones -> lectura . lectura asignacion impresion fin
+    (4) lectura -> . READ ID PUNTO_COMA
+
+    READ            shift and go to state 11
+
+    lectura                        shift and go to state 14
+
+state 11
+
+    (4) lectura -> READ . ID PUNTO_COMA
+
+    ID              shift and go to state 15
+
+
+state 12
+
+    (2) declaraciones -> INT ID . COMA ID COMA ID PUNTO_COMA
+
+    COMA            shift and go to state 16
+
+
+state 13
+
+    (1) programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA .
+
+    $end            reduce using rule 1 (programa -> PROGRAMA ID PABIERTO PCERRADO LLAVE_ABIERTA declaraciones instrucciones LLAVE_CERRADA .)
+
+
+state 14
+
+    (3) instrucciones -> lectura lectura . asignacion impresion fin
+    (5) asignacion -> . ID OPERADOR ID OPERADOR ID PUNTO_COMA
+
+    ID              shift and go to state 18
+
+    asignacion                     shift and go to state 17
+
+state 15
+
+    (4) lectura -> READ ID . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 19
+
+
+state 16
+
+    (2) declaraciones -> INT ID COMA . ID COMA ID PUNTO_COMA
+
+    ID              shift and go to state 20
+
+
+state 17
+
+    (3) instrucciones -> lectura lectura asignacion . impresion fin
+    (6) impresion -> . PRINTF PABIERTO CADENA PCERRADO PUNTO_COMA
+
+    PRINTF          shift and go to state 22
+
+    impresion                      shift and go to state 21
+
+state 18
+
+    (5) asignacion -> ID . OPERADOR ID OPERADOR ID PUNTO_COMA
+
+    OPERADOR        shift and go to state 23
+
+
+state 19
+
+    (4) lectura -> READ ID PUNTO_COMA .
+
+    READ            reduce using rule 4 (lectura -> READ ID PUNTO_COMA .)
+    ID              reduce using rule 4 (lectura -> READ ID PUNTO_COMA .)
+
+
+state 20
+
+    (2) declaraciones -> INT ID COMA ID . COMA ID PUNTO_COMA
+
+    COMA            shift and go to state 24
+
+
+state 21
+
+    (3) instrucciones -> lectura lectura asignacion impresion . fin
+    (7) fin -> . END PUNTO_COMA
+
+    END             shift and go to state 26
+
+    fin                            shift and go to state 25
+
+state 22
+
+    (6) impresion -> PRINTF . PABIERTO CADENA PCERRADO PUNTO_COMA
+
+    PABIERTO        shift and go to state 27
+
+
+state 23
+
+    (5) asignacion -> ID OPERADOR . ID OPERADOR ID PUNTO_COMA
+
+    ID              shift and go to state 28
+
+
+state 24
+
+    (2) declaraciones -> INT ID COMA ID COMA . ID PUNTO_COMA
+
+    ID              shift and go to state 29
+
+
+state 25
+
+    (3) instrucciones -> lectura lectura asignacion impresion fin .
+
+    LLAVE_CERRADA   reduce using rule 3 (instrucciones -> lectura lectura asignacion impresion fin .)
+
+
+state 26
+
+    (7) fin -> END . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 30
+
+
+state 27
+
+    (6) impresion -> PRINTF PABIERTO . CADENA PCERRADO PUNTO_COMA
+
+    CADENA          shift and go to state 31
+
+
+state 28
+
+    (5) asignacion -> ID OPERADOR ID . OPERADOR ID PUNTO_COMA
+
+    OPERADOR        shift and go to state 32
+
+
+state 29
+
+    (2) declaraciones -> INT ID COMA ID COMA ID . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 33
+
+
+state 30
+
+    (7) fin -> END PUNTO_COMA .
+
+    LLAVE_CERRADA   reduce using rule 7 (fin -> END PUNTO_COMA .)
+
+
+state 31
+
+    (6) impresion -> PRINTF PABIERTO CADENA . PCERRADO PUNTO_COMA
+
+    PCERRADO        shift and go to state 34
+
+
+state 32
+
+    (5) asignacion -> ID OPERADOR ID OPERADOR . ID PUNTO_COMA
+
+    ID              shift and go to state 35
+
+
+state 33
+
+    (2) declaraciones -> INT ID COMA ID COMA ID PUNTO_COMA .
+
+    READ            reduce using rule 2 (declaraciones -> INT ID COMA ID COMA ID PUNTO_COMA .)
+
+
+state 34
+
+    (6) impresion -> PRINTF PABIERTO CADENA PCERRADO . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 36
+
+
+state 35
+
+    (5) asignacion -> ID OPERADOR ID OPERADOR ID . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 37
+
+
+state 36
+
+    (6) impresion -> PRINTF PABIERTO CADENA PCERRADO PUNTO_COMA .
+
+    END             reduce using rule 6 (impresion -> PRINTF PABIERTO CADENA PCERRADO PUNTO_COMA .)
+
+
+state 37
+
+    (5) asignacion -> ID OPERADOR ID OPERADOR ID PUNTO_COMA .
+
+    PRINTF          reduce using rule 5 (asignacion -> ID OPERADOR ID OPERADOR ID PUNTO_COMA .)
+
