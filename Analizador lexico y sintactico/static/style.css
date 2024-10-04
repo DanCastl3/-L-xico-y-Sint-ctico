@@ -34,7 +34,7 @@ textarea {
 
 /* Botón Analizar */
 .btn-analizar {
-    background-color: #28a745; /* Verde para el botón Analizar */
+    background-color: #28a745; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -45,12 +45,12 @@ textarea {
 }
 
 .btn-analizar:hover {
-    background-color: #218838; /* Más oscuro al hacer hover */
+    background-color: #218838; 
 }
 
 /* Botón Limpiar */
 .btn-limpiar {
-    background-color: #dc3545; /* Rojo para el botón Limpiar */
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -61,24 +61,24 @@ textarea {
 }
 
 .btn-limpiar:hover {
-    background-color: #c82333; /* Más oscuro al hacer hover */
+    background-color: #c82333; 
 }
 
 
 /* Título */
 h1 {
     text-align: center;
-    color: #e94560; /* Rojo claro */
-    font-size: 1.8em; /* Reducir tamaño de fuente */
+    color: #e94560; 
+    font-size: 1.8em; 
     margin-bottom: 20px;
 }
 
 /* Formulario */
 form {
-    background-color: #0f3460; /* Azul muy oscuro */
+    background-color: #0f3460; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); 
     margin-bottom: 20px;
 }
 
@@ -87,26 +87,26 @@ label {
     font-weight: bold;
     display: block;
     margin-bottom: 8px;
-    color: #eaeaea; /* Texto claro */
+    color: #eaeaea; 
 }
 
 textarea {
-    width: 100%; /* Mantén el ancho al 100% del contenedor */
-    height: 200px; /* Aumenta la altura del cuadro */
+    width: 100%; 
+    height: 200px; 
     padding: 10px;
     border: 2px solid #0f3460;
     border-radius: 5px;
     background-color: #1f4068;
     color: #eaeaea;
     font-size: 16px;
-    resize: none; /* Evita que el usuario cambie el tamaño */
+    resize: none; 
     margin-bottom: 15px;
 }
 
 input[type="submit"] {
-    background-color: #e94560; /* Rojo oscuro */
+    background-color: #e94560; 
     color: #ffffff;
-    padding: 10px 20px; /* Ajustar padding */
+    padding: 10px 20px; 
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -115,7 +115,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #c0392b; /* Efecto hover más oscuro */
+    background-color: #c0392b; 
 }
 
 /* Contenedor de tablas */
@@ -130,7 +130,7 @@ input[type="submit"]:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #1b1b2f; /* Fondo oscuro para tablas */
+    background-color: #1b1b2f; 
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -138,30 +138,30 @@ table {
 }
 
 th, td {
-    padding: 10px 12px; /* Ajustar el padding para mejorar legibilidad */
-    border: 1px solid #3d3d3d; /* Borde gris oscuro */
+    padding: 10px 12px; 
+    border: 1px solid #3d3d3d; 
     text-align: left;
-    font-size: 1em; /* Ajustar tamaño de fuente */
+    font-size: 1em; 
 }
 
 th {
-    background-color: #e94560; /* Rojo oscuro para encabezados */
+    background-color: #e94560; 
     color: #ffffff;
     font-weight: normal;
 }
 
 tr:nth-child(even) {
-    background-color: #222831; /* Fondo de filas pares más oscuro */
+    background-color: #222831; 
 }
 
 tr:hover {
-    background-color: #393e46; /* Resaltado al pasar el ratón */
+    background-color: #393e46; 
 }
 
 /* Tabla de resultados léxicos */
 .table-token {
     flex: 1;
-    background-color: #16213e; /* Fondo azul oscuro intermedio */
+    background-color: #16213e; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     margin: 0 5px;
@@ -169,7 +169,7 @@ tr:hover {
 
 /* Tabla del resultado sintáctico */
 .result-sintactico {
-    background-color: #1b1b2f; /* Fondo oscuro */
+    background-color: #1b1b2f;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
@@ -179,17 +179,17 @@ tr:hover {
 /* Estilo del texto del análisis sintáctico */
 pre {
     text-align: left;
-    background-color: #0f3460; /* Fondo oscuro */
-    color: #eaeaea; /* Texto claro */
+    background-color: #0f3460; 
+    color: #eaeaea; 
     padding: 15px;
     border-radius: 8px;
-    font-family: Consolas, monospace; /* Fuente monospace para código */
-    white-space: pre-wrap; /* Permite que el contenido se ajuste */
+    font-family: Consolas, monospace; 
+    white-space: pre-wrap; 
 }
 
 /* Mensajes de error o información */
 .error {
-    background-color: #ff6b6b; /* Rojo claro para errores */
+    background-color: #ff6b6b; 
     border-left: 6px solid #e94560;
     margin: 20px 0;
     padding: 15px;
@@ -210,8 +210,8 @@ pre {
 
 /* Mensajes de éxito */
 .success {
-    background-color: #4CAF50; /* Verde para mensajes de éxito */
-    border-left: 6px solid #3e8e41; /* Sombra más oscura */
+    background-color: #4CAF50; 
+    border-left: 6px solid #3e8e41; 
     margin: 20px 0;
     padding: 15px;
     border-radius: 6px;
@@ -227,10 +227,10 @@ pre {
     }
 
     table {
-        max-width: 100%; /* Asegurar que las tablas se adapten a pantallas pequeñas */
+        max-width: 100%; 
     }
 
     pre {
-        font-size: 0.85em; /* Reducir un poco el tamaño de fuente para pantallas pequeñas */
+        font-size: 0.85em; 
     }
 }
