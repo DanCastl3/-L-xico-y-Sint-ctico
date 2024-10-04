@@ -174,7 +174,7 @@ def analizar_sintaxis(expresion):
             else:
                 return f"Error en la estructura: Se esperaba 'end' en la línea {linea_actual}"
 
-    return "Error en la estructura"  # Si se llega al final y no se encontró un "END"
+    return "Error en la estructura"  
 
 
 
@@ -186,9 +186,9 @@ def index():
         'CADENA': 0,  
         'NUMERO': 0,
         'SIMBOLO': 0,
-        'PARENTESIS': 0,  # Contador de paréntesis
-        'DELIMITADOR': 0,  # Contador de delimitadores
-        'OPERADOR': 0      # Contador de operadores
+        'PARENTESIS': 0,  
+        'DELIMITADOR': 0,  
+        'OPERADOR': 0      
     }
 
     mensaje_sintaxis = ""
@@ -202,7 +202,6 @@ def index():
 
         lexer.input(expresion)
         
-        # Proceso de tokens en el orden en que aparecen, con número de línea
         result_lexema = []
         
         for token in lexer:
@@ -214,13 +213,13 @@ def index():
                 contador['IDENTIFICADOR'] += 1  
             elif token.type == "PABIERTO" or token.type == "PCERRADO":
                 result_lexema.append(("PARENTESIS", token.value, token.lineno))
-                contador['PARENTESIS'] += 1  # Contar paréntesis
+                contador['PARENTESIS'] += 1  
             elif token.type == "LLAVE_ABIERTA" or token.type == "LLAVE_CERRADA":
                 result_lexema.append(("DELIMITADOR", token.value, token.lineno))
-                contador['DELIMITADOR'] += 1  # Contar delimitadores
+                contador['DELIMITADOR'] += 1  
             elif token.type == "OPERADOR":
                 result_lexema.append(("OPERADOR", token.value, token.lineno))
-                contador['OPERADOR'] += 1      # Contar operadores
+                contador['OPERADOR'] += 1      
             elif token.type == "SIMBOLO":
                 result_lexema.append(("SIMBOLO", token.value, token.lineno))
                 contador['SIMBOLO'] += 1  
