@@ -158,66 +158,6 @@ tr:hover {
     background-color: #393e46; 
 }
 
-/* Tabla de resultados léxicos */
-.table-token {
-    flex: 1;
-    background-color: #16213e; 
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    margin: 0 5px;
-}
-
-/* Tabla del resultado sintáctico */
-.result-sintactico {
-    background-color: #1b1b2f;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Estilo del texto del análisis sintáctico */
-pre {
-    text-align: left;
-    background-color: #0f3460; 
-    color: #eaeaea; 
-    padding: 15px;
-    border-radius: 8px;
-    font-family: Consolas, monospace; 
-    white-space: pre-wrap; 
-}
-
-/* Mensajes de error o información */
-.error {
-    background-color: #ff6b6b; 
-    border-left: 6px solid #e94560;
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 6px;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-/* Mensajes de información */
-.message {
-    background-color: #0f3460;
-    border-left: 6px solid #e94560;
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 6px;
-    color: #eaeaea;
-}
-
-/* Mensajes de éxito */
-.success {
-    background-color: #4CAF50; 
-    border-left: 6px solid #3e8e41; 
-    margin: 20px 0;
-    padding: 15px;
-    border-radius: 6px;
-    color: #ffffff; /* Texto blanco */
-    font-weight: bold;
-}
 
 /* Responsividad */
 @media (max-width: 768px) {
