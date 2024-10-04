@@ -176,6 +176,8 @@ def analizar_sintaxis(expresion):
 
     return "Error en la estructura"  # Si se llega al final y no se encontró un "END"
 
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     contador = {
@@ -183,7 +185,10 @@ def index():
         'IDENTIFICADOR': 0,
         'CADENA': 0,  
         'NUMERO': 0,
-        'SIMBOLO': 0
+        'SIMBOLO': 0,
+        'PARENTESIS': 0,  # Contador de paréntesis
+        'DELIMITADOR': 0,  # Contador de delimitadores
+        'OPERADOR': 0      # Contador de operadores
     }
 
     mensaje_sintaxis = ""
@@ -207,20 +212,22 @@ def index():
             elif token.type == "ID":
                 result_lexema.append(("IDENTIFICADOR", token.value, token.lineno))
                 contador['IDENTIFICADOR'] += 1  
-            elif token.type == "PABIERTO":
-                result_lexema.append(("PARENTESIS IZQUIERDO", token.value, token.lineno))
-            elif token.type == "PCERRADO":
-                result_lexema.append(("PARENTESIS DERECHO", token.value, token.lineno))
+            elif token.type == "PABIERTO" or token.type == "PCERRADO":
+                result_lexema.append(("PARENTESIS", token.value, token.lineno))
+                contador['PARENTESIS'] += 1  # Contar paréntesis
             elif token.type == "LLAVE_ABIERTA" or token.type == "LLAVE_CERRADA":
                 result_lexema.append(("DELIMITADOR", token.value, token.lineno))
+                contador['DELIMITADOR'] += 1  # Contar delimitadores
             elif token.type == "OPERADOR":
                 result_lexema.append(("OPERADOR", token.value, token.lineno))
+                contador['OPERADOR'] += 1      # Contar operadores
             elif token.type == "SIMBOLO":
                 result_lexema.append(("SIMBOLO", token.value, token.lineno))
                 contador['SIMBOLO'] += 1  
             elif token.type == "NUMERO":
                 result_lexema.append(("NUMERO", token.value, token.lineno))
                 contador['NUMERO'] += 1  
+        
         
         return render_template('index.html', tokens=result_lexema, contador=contador, expresion=expresion, mensaje_sintaxis=mensaje_sintaxis)
     
