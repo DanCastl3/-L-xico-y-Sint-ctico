@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Definición de palabras reservadas
+# Definición de palabras reservadas prueba
 reserved = {
     'programa': 'PROGRAMA',
     'read': 'READ',
